@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<body>
+{% block title %}
+Mario needs to find the Princess
+{% endblock %}
+ 
+{% block content %}
+	<h3>Get Shortest Paths</h3>
+	<br>
+	<form action="/mario/">
+	{% csrf_token %}
+        <label for="fname">Grid Size:</label><br>
+          <input type="text" id="grid_size" name="grid_size" value="3"><br>
+         <label for="lname">Grid:</label><br>
+         <input type="text" id="grid" name="grid" value="__m,_x_,__p"><br><br>
+        <input type="submit" value="Submit">
+        </form>
+        <table bgcolor = "black">
+         <tr>
+            <td>
+               <font color = "white">{{ error_flag }}</font>
+            </td>
+         </tr>
+      </table>	
+	{{ paths }}
+{% endblock %}
+</body>
+</html>
